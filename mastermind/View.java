@@ -16,6 +16,7 @@ public class View {
 
     public void printWinMessage(String name, int numberOfGuesses) {
         System.out.printf(Constants.SOLVED, name, numberOfGuesses);
+        System.out.println();
     }
 
     public void printDivider(String[] guess) {
