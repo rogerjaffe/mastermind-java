@@ -12,6 +12,7 @@ public class View {
 
     public void printScore(int p1Score, int p2Score) {
         System.out.printf(Constants.CURRENT_SCORE, p1Score, p2Score);
+        System.out.println();
     }
 
     public void printWinMessage(String name, int numberOfGuesses) {
