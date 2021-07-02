@@ -26,7 +26,10 @@ public class Controller {
             } else if (state.getGameState() == Constants.GET_NAMES) {
                 String namesStr = view.getStringFromKeyboard(Constants.GET_PLAYER_NAMES, null, null);
                 String[] names = namesStr.split(",");
-                if (names[0].length() > 0 && names[1].length() > 0) {
+                if (names.length == 2 && 
+                    names[0].length() > 0 && 
+                    names[1].length() > 0
+                ) {
                     players.getSecretPlayer().setName(names[0]);
                     players.getGuessPlayer().setName(names[1]);
                     state.setGameState(Constants.GET_SECRET);
