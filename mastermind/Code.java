@@ -63,15 +63,15 @@ public class Code {
 
                         feedback[guessIdx] = Constants.PRESENT;
                         usedList[secretIdx] = true;
-                        break;
+                        secretIdx = length;
                     }
                 }
             }
+        }
 
-            for (int feedbackIdx=0; feedbackIdx<length; feedbackIdx++) {
-                if (feedback[feedbackIdx].equals("")) {
-                    feedback[feedbackIdx] = Constants.NOT_PRESENT;
-                }
+        for (int feedbackIdx=0; feedbackIdx<length; feedbackIdx++) {
+            if (feedback[feedbackIdx].equals("")) {
+                feedback[feedbackIdx] = Constants.NOT_PRESENT;
             }
         }
 
