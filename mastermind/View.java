@@ -52,7 +52,7 @@ public class View {
             buffer += "| " + digit + " ";
         }
         buffer += Constants.DIVIDER_FINISH;
-        System.out.println("Feedback: "+feedback);
+        System.out.println("Feedback: "+buffer);
     }
 
     public void clearTerminal() {
