@@ -3,11 +3,11 @@ import java.util.Scanner;
 
 public class View {
 
-    public String[] getStringArrayFromKeyboard(String prompt, String p1, String p2) {
+    public String getStringFromKeyboard(String prompt, String p1, String p2) {
         System.out.printf(prompt, p1, p2);
         Scanner scanner = new Scanner(System.in);
         String inputString = scanner.next();
-        return inputString.split("");
+        return inputString;
     }
 
     public void printScore(int p1Score, int p2Score) {

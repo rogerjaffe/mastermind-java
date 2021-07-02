@@ -24,7 +24,8 @@ public class Controller {
         state.setGameState(Constants.GET_NAMES);
 
       } else if (state.getGameState() == Constants.GET_NAMES) {
-        String[] names = view.getStringArrayFromKeyboard(Constants.GET_PLAYER_NAMES, null, null);
+        String namesStr = view.getStringFromKeyboard(Constants.GET_PLAYER_NAMES, null, null);
+        String[] names = namesStr.split(",");
         if (names[0].length() > 0 && names[1].length() > 0) {
           players.getSecretPlayer().setName(names[0]);
           players.getGuessPlayer().setName(names[1]);
@@ -35,7 +36,8 @@ public class Controller {
 
       // GET_SECRET then switch to GET_GUESS
       } else if (state.getGameState() == Constants.GET_SECRET) {
-        String[] newSecret = view.getStringArrayFromKeyboard(Constants.GET_SECRET_CODE_PROMPT, null, null);
+        String newSecretStr = view.getStringFromKeyboard(Constants.GET_SECRET_CODE_PROMPT, null, null);
+        String[] newSecret = newSecretStr.split("");
         if (!view.validateSecret(newSecret)) {
           System.out.println("Your secret code must only contain digits 0 through 9");
         } else {
@@ -46,11 +48,12 @@ public class Controller {
 
       // GET_GUESS -> validate guess and save
       } else if (state.getGameState() == Constants.GET_GUESS) {
-        String[] newGuess = view.getStringArrayFromKeyboard(
+        String newGuessStr = view.getStringFromKeyboard(
           Constants.ENTER_GUESS, 
           players.getGuessPlayer().getName(), 
           (new Integer(code.getSecret().length)).toString()
         );
+        String[] newGuess = newGuessStr.split("");
         if (view.validateGuess(code.getSecret(), newGuess)) {
           System.out.println("Your secret code must only contain digits 0 through 9");
         } else {
