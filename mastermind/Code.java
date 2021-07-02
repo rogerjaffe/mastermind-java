@@ -28,7 +28,7 @@ public class Code {
     }
 
     public boolean isGuessCorrect() {
-        return guess.equals(secret);
+        return Arrays.equals(guess, secret);
     }
 
     // Returns true if feedback completed
