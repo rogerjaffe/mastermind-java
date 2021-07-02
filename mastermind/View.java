@@ -5,7 +5,7 @@ public class View {
 
     public String[] getStringArrayFromKeyboard(String prompt, String p1, String p2) {
         System.out.printf(prompt, p1, p2);
-        Scanner scanner = new Scanner(System.in).useDelimiter("");
+        Scanner scanner = new Scanner(System.in);
         String inputString = scanner.next();
         return inputString.split("");
     }
