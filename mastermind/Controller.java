@@ -55,12 +55,12 @@ public class Controller {
         );
         String[] newGuess = newGuessStr.split("");
         if (view.validateGuess(code.getSecret(), newGuess)) {
-          System.out.println("Your secret code must only contain digits 0 through 9");
-        } else {
-          view.printGuess(code.getGuess());
           code.setGuess(newGuess);
+          view.printGuess(code.getGuess());
           state.incrementGuessCount();
           state.setGameState(Constants.GET_FEEDBACK);
+        } else {
+          System.out.println("Your secret code must only contain digits 0 through 9");
         }
 
         // COMPUTE_FEEDBACK -> analyze guess / offer feedback
