@@ -58,7 +58,7 @@ public class Code {
         for (int guessIdx=0; guessIdx<length; guessIdx++) {
             if (feedback[guessIdx].equals("")) {
                 for (int secretIdx=0; secretIdx<length; secretIdx++) {
-                    if (guess[guessIdx] == secret[secretIdx] &&
+                    if (guess[guessIdx].equals(secret[secretIdx]) &&
                     !usedList[secretIdx]) {
 
                         feedback[guessIdx] = Constants.PRESENT;
